@@ -1,94 +1,60 @@
-let temperature = 22;
-
-if (temperature > 18) {
-    console.log("It's too cold, turn on the heater.");
-}
-else if (temperature =>18 && temperature <= 25){
-    console.log("The temperature is comfortable.")
-
-}
-else if (temperature >25) {
-    console.log("It's too hot, turn on the fan.");
-}
+console.log("1")
+console.log("12")
+console.log("123")
+console.log("1234")
+console.log("12345")
 
 
-let score = 82; 
+console.log("*")
+console.log("**")
+console.log("***")
+console.log("****")
+//Q1//
+yourName = "Ved Santoki";
+strength = "Strong";
+console.log(yourName);
+console.log(strength);
 
-if (score >= 90) {
-  console.log("Grade A.");
-} else if (score >= 75 && score <= 89) {
-  console.log("Grade B.");
-} else if (score >= 50 && score <= 74) {
-  console.log("Grade C.");
-} else if (score < 50) {
-  console.log("Grade D.");
-}
+//Q2//
+let name = "Ved santoki";// my name 
+console.log(name);
 
+name="manoj santoki"; // father's name
+console.log(name);
 
+name ="kiran santoki"; // mother's name
+console.log(name);
 
-let trafficLight = "Yellow"; 
+//Q3//
 
-if (trafficLight === "Red") {
-  console.log("Stop.");
-} else if (trafficLight === "Yellow") {
-  console.log("Slow down.");
-} else if (trafficLight === "Green") {
-  console.log("Go.");
-}
+let name2 = "Ved Santoki";
+let age = 19;
+console.log("My name is " + name2 + " and my age is " + age + ".");
 
+//Q4//
 
+let stundentName = "Ved Santoki";
+let school ="Shree Swami Vivekanand Vidyalaya";
+let grade = "12th";
+let section = "A";
+let rollNo = 1;
+let math = 95;
+let english = 85;
+let science = 90;
 
-let billAmount = 85; // Change this value to test different bills
-
-if (billAmount < 50) {
-  console.log("No discount.");
-} else if (billAmount >= 50 && billAmount <= 100) {
-  let discount = billAmount * 0.10;
-  console.log("10% discount applied. You save $" + discount);
-} else if (billAmount > 100) {
-  let discount = billAmount * 0.20;
-  console.log("20% discount applied. You save $" + discount);
-}
-
-
-
-let time = 9; // Change this value to test different times (e.g., 6, 8, 15, 19)
-
-if (time < 7) {
-  console.log("It's too early, sleep a bit more.");
-} else if (time >= 7 && time < 10) {
-  console.log("Time for breakfast and morning exercise.");
-} else if (time >= 10 && time <= 18) {
-  console.log("Time to work or study.");
-} else if (time > 18) {
-  console.log("Relax for the day.");
-}
-
-
-let sum = 0;
-
-for (let i = 1; i <= 15; i++) {
-  if (i % 2 === 0 || i % 5 === 0) {
-    sum += i;
-  }
-}
-
-console.log("Sum of numbers divisible by 2 or 5 between 1 and 15:", sum); // → 76
-
-
-
-let number = 3; // Change this to any number you want the table for
-
-for (let i = 1; i <= 10; i++) {
-  console.log(number + " x " + i + " = " + (number * i));
-}
-
-
-for (let i = 1; i <= 5; i++) {
-    let stars = "";
-    for (let j = 1; j <= i; j++) {
-      stars += "*";
-    }
-    console.log(stars);
-  }
-  
+console.log("**************************************************************************");
+console.log("                         STUNDENT REPORT CARD");
+console.log("**************************************************************************");
+console.log("Name                      : " + stundentName);
+console.log("School                    : " + school);
+console.log("Grade                     : " + grade);
+console.log("Section                   : " + section);
+console.log("Roll No                   : " + rollNo);
+console.log("---------------------------Marks---------------------------");
+console.log("Math                      : " + math);
+console.log("English                   : " + english);
+console.log("Science                   : " + science);
+console.log("**************************************************************************");
+console.log("Total Marks               : " + (math + english + science));
+console.log("Average Marks             : " + ((math + english + science) / 3));
+console.log("**************************************************************************");
