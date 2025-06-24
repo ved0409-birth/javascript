@@ -1,142 +1,167 @@
+let array = [12,3,4,8,77,9,5,6,-8]
+
+console.log(array.length);
+
+console.log(array[4]);
+
+let max = -Infinity;
+for (let i = 0; i < array.length; i++) {
+    if (array[i] > max) {
+        max = array[i];
+    }
+}
+console.log(max);
+
+let array2= [66,88,99]
+
+let length = array2.push(100);
+console.log(array2,length);
+
+let removedElement = array2.pop();
+console.log(array2, removedElement, length);
+console.log(array2)
+
+let removedFirstElement = array2.shift();
+console.log(array2, removedFirstElement);
+
+let addedFirstElement = array2.unshift(55);
+console.log(array2, addedFirstElement);
+
+
 //q1
-function capitalizeNames(names) {
-    return names.map(name =>
-      typeof name === 'string' && name.length > 0
-        ? name[0].toUpperCase() + name.slice(1).toLowerCase()
-        : name
-    );
-  }
-  
-  const input = ["john", "SARAh", "miKe"];
-  const result = capitalizeNames(input);
-  console.log(result); // Output: ["John", "Sarah", "Mike"]
-  
- //q2
+const numbers = [1, 2, 3, 4, 5];
 
- function countWords(sentence) {
-    if (typeof sentence !== 'string') return 0;
-    
-    const words = sentence.trim().split;
-    return words[0] === "" ? 0 : words.length;
-  }
-  
-  const sentence = "  Hello world! This is JavaScript.  ";
-  const wordCount = countWords(sentence);
-  console.log("Word count:", wordCount);
-  
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+//q2
+const number = [10, 20, 30, 40, 50];
+let i = 0;
+
+while (i < number.length) {
+  console.log(number[i]);
+  i++;
+}
+
 //q3
+let n = 5; 
+let factorial = 1;
 
-function findMinNumber(numbers) {
-    if (numbers.length === 0) return undefined; // Handle empty array
-  
-    let min = numbers[0]; // Start with the first number
-  
-    for (let i = 1; i < numbers.length; i++) {
-      if (numbers[i] < min) {
-        min = numbers[i]; // Update min if a smaller number is found
-      }
-    }
-  
-    return min;
+for (let i = 1; i <= n; i++) {
+  factorial *= i;
+}
+
+console.log(`Factorial of ${n} is ${factorial}`);
+
+//q4
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
   }
-const numbersArray = [5, 3, 8, 9, 4];
-const minNumber = findMinNumber(numbersArray);
-console.log("Minimum number:", minNumber); 
-//q4  
-function printNumbers(n) {
-    let i = 1;
-    while (i <= n) {
-      console.log(i);
-      i++;
-    }
-  }
-printNumbers(8)  
+}
 
 //q5
+let sum = 0;
 
-function joinArrayToString(arr) {
-    let result = "";
-  
-    for (let i = 0; i < arr.length; i++) {
-      result += arr[i];
-      if (i < arr.length - 1) {
-        result += " ";
-      }
-    }
-  
-    return result;
-  }
-const arrayToJoin = ["Hello", "world", "this", "is", "JavaScript"];
-const joinedString = joinArrayToString(arrayToJoin);
-console.log("Joined string:", joinedString);
+for (let i = 1; i <= 100; i++) {
+  sum += i;
+}
+
+console.log("Sum of numbers from 1 to 100 is:", sum);
 
 //q6
-function calculateProduct(numbers) {
-    if (numbers.length === 0) return 0; // Return 0 for empty array
-  
-    let product = 1;
-    let i = 0;
-  
-    while (i < numbers.length) {
-      product *= numbers[i];
-      i++;
-    }
-  
-    return product;
-  }
-const numbersForProduct = [2, 3, 4];
-const productResult = calculateProduct(numbersForProduct);
-console.log("Product of numbers:", productResult);
-//q7
-function removeSpaces(str) {
-    let result = "";
-  
-    for (let i = 0; i < str.length; i++) {
-      if (str[i] !== " ") {
-        result += str[i];
-      }
-    }
-  
-    return result;
-  }
-const stringWithSpaces = "  Hello   World!  ";
-const stringWithoutSpaces = removeSpaces(stringWithSpaces);
-console.log("String without spaces:", stringWithoutSpaces);  
-//q8
+for (let i = 1; i <= 10; i++) {
+  let cube = i * i * i;
+  console.log(`Cube of ${i} is ${cube}`);
+}
 
-function doubleNumbers(numbers) {
-    let doubled = [];
-  
-    for (let i = 0; i < numbers.length; i++) {
-      doubled.push(numbers[i] * 2);
-    }
-  
-    return doubled;
+//q7
+let sum1 = 0;
+
+for (let i = 1; i <= 20; i += 2) {
+  sum1 += i * i;
+}
+
+console.log("Sum of squares of odd numbers from 1 to 20 is:", sum1);
+
+//q8
+let sum2 = 0;
+
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0) {
+    sum2 += i;
   }
-const numbersToDouble = [1, 2, 3, 4, 5];
-const doubledNumbers = doubleNumbers(numbersToDouble);
-console.log("Doubled numbers:", doubledNumbers);
+}
+
+console.log("Sum of numbers divisible by 3 from 1 to 100 is:", sum2);
 
 //q9
-function printoddNumbers(n) {
-    let i = 1;
-  
-    while (i <= n) {
-      if (i % 2 !== 0) {
-        console.log(i);
-      }
-      i++;
-    }
-  }
-printoddNumbers(15);
+let product = 1;
+
+for (let i = 1; i <= 10; i++) {
+  product *= i;
+}
+
+console.log("Product of numbers from 1 to 10 is:", product);
+
 //q10
-function createIncrementer(start) {
-    let count = start;
-  
-    return function() {
-      count++;
-      return count;
-    };
+let a= 10;
+
+while (a >= 1) {
+  console.log(a);
+  a--;
+}
+
+//q11
+let number1 = 1;
+
+while (number1 <= 1000) {
+  number1 *= 2;
+}
+
+console.log("Final value after exceeding 1000 is:", number1);
+
+//q12
+let b = 2;
+let sum3 = 0;
+
+while (b <= 100) {
+  sum3 += b;
+  b += 2;
+}
+
+console.log("Sum of even numbers from 1 to 100 is:", sum3);
+
+//q13
+let number4 = 1;
+let count = 0;
+
+while (count < 5) {
+  if (number4 % 3 === 0 && number4 % 7 === 0) {
+    console.log(number4);
+    count++;
   }
-const incrementer = createIncrementer(5);
-console.log(incrementer()); 
+  number4++;
+}
+//q14
+let c = 1;
+
+do {
+  console.log(c);
+  c++;
+} while (c <= 10);
+
+
+
+
+
+
+
+
