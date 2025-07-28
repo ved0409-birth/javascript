@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Time</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #06b0e3;
+            color: #333;
+            text-align: center;
+            margin-top: 500px;
+            display: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        #text {
+            font-size: 40px;
+            color: #555;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2b282862;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            color: white;
+        }
+        button:hover {
+            background-color: #2b19b8;
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <h1 id="text"></h1>
+    <button id="startButton">click here</button>
+    <script>
+        let text = document.querySelector("#text");
+        let array = ["The wait is over. Now go make it count", 
+                     "The future is bright, and it's yours to shape", 
+                     "Your journey begins now, embrace the adventure", 
+                     "Success is not just a destination, it's a journey"
+                    ];
+        let count = 0;
+        let interval;
+
+        function startCountdown() {
+            if (interval) return; 
+            interval = setInterval(() => {
+                if (count == array.length) {
+                    count = 0;
+
+                }
+                text.innerHTML = array[count];
+                count++;
+            }, 2000);
+
+        }
+
+        function show() {
+            text.innerHTML = "start countdown";
+        }
+
+        window.addEventListener("load", show);
+        let button = document.querySelector("#startButton").addEventListener("click", startCountdown);
+    </script>
+</body>
