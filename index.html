@@ -1,79 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Day</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💛 Happy Friendship Day 💛</h1>
+        <p class="quote">"Good friends are like stars, you don't always see them, but you know they're always there."</p>
+
+        <button id="wishBtn">Send Friendship Wish 🎉</button>
+        <div id="wishMessage"></div>
+
+        <div class="hearts"></div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 23 Slider</title>
+    <title>Happy Friendship Day</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-        }
-        .imagebox {
-            margin : 20px auto;
-            padding-top:  px;
-            width: 80%;
-            /* max-width: 600px; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
-        .image {
-            width: 800px;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin: auto;
-        }
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            
-        }
-        h1 {
-            color: #333;
-        }
-        </style>
 </head>
 <body>
-    <h1 id="images"></h1>
-    <button id="back">back</button>
-    <button id="next">next</button>
-    <div class="imagebox">
-      
-        </div>
-        
-      <script>
-        let arr = ["https://cdn.motor1.com/images/mgl/XBY366/s3/bmw-m8-gte-race-car-at-homestead-miami-speedway-80.webp" , 
-            "https://uploads.audi-mediacenter.com/system/production/media/1496/images/aa51d0827491ca829fa246943c5ce2d2c19fac29/R8150102_web_1440.jpg?1698172570",
-            "https://wieck-nissanao-production.s3.amazonaws.com/photos/35f34a54d9ae706ba536182dde96029aa631fc61/preview-768x432.jpg",
-            "https://www.gt-world-challenge-america.com//timthumb.php?w=1600&src=%2Fimages%2F2020-07-06-merc-team-1.jpg"
-        ]
+    <!-- Background Animation -->
+    <canvas id="heartsCanvas"></canvas>
 
-        let images = document.querySelector('.imagebox');
-        let count = 0;
-        images.innerHTML = `<img src="${arr[count]}" alt="Image" class="image">`;
-        let back = document.getElementById('back');
-        let next = document.getElementById('next');
-        back.addEventListener('click', function() {
-            count--;
-            if (count < 0) {
-                count = arr.length - 1;
-            }
-            images.innerHTML = `<img src="${arr[count]}" alt="Image" class="image">`;
-        });
-        next.addEventListener('click', function() {
-            count++;
-            if (count >= arr.length) {
-                count = 0;
-            }
-            images.innerHTML = `<img src="${arr[count]}" alt="Image" class="image">`;
-        });
-      </script>  
+    <header>
+        <h1>💛 Happy Friendship Day 💛</h1>
+        <p>Celebrating the beautiful bond of friendship</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Friends are the family we choose 💕</h2>
+        <p>Thank you for being part of my life!</p>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown">
+        <h2>Countdown to Friendship Day 🎉</h2>
+        <div id="timer">Loading...</div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section class="quotes">
+        <h2>Friendship Quotes 💬</h2>
+        <p id="quote">Loading quotes...</p>
+        <button onclick="newQuote()">Get New Quote</button>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <h2>Friendship Memories 📸</h2>
+        <div class="images">
+            <img src="./9155dcdf-affd-4539-825a-110678d43ee8.jpg" alt="Friends">
+            <img src="./IMG_0663.HEIC" alt="Friends">
+            <img src="./IMG_4885.HEIC" alt="Friends">
+        </div>
+    </section>
+
+    <!-- Music Control -->
+    <section class="music">
+        <h2>Background Music 🎶</h2>
+        <button onclick="toggleMusic()">Play / Pause Music</button>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ for all my amazing friends</p>
+    </footer>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="./7years-620045-mobiles24.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="./script.js"></script>
 </body>
 </html>
+
