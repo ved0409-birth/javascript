@@ -1,152 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add to Cart</title>
-    <style>
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        h1, h2 {
-            color: #444;
-        }
-
-        .product {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .product p {
-            margin: 0 0 10px;
-        }
-
-        .product button {
-            padding: 5px 10px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .product button:hover {
-            background-color: #218838;
-        }
-
-        .cart {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-        }
-
-        .cart ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .cart ul li {
-            margin-bottom: 5px;
-        }
-
-        .cart p {
-            margin: 10px 0 0;
-            font-weight: bold;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .product {
-            margin-bottom: 20px;
-        }
-        .cart {
-            margin-top: 30px;
-            border-top: 1px solid #ccc;
-            padding-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COVID-19 India Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    .updated {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card h2 {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .confirmed { color: #e74c3c; }
+    .recovered { color: #27ae60; }
+    .deaths { color: #8e44ad; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #2c3e50;
+      color: white;
+    }
+    tr:hover {
+      background: #f1f1f1;
+    }
+    #searchBox {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      color: #555;
+      font-size: 14px;
+      background: #f1f1f1;
+    }
+    footer a {
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to Our Store</h1>
-    
-    <h1>Products</h1>
-    <div class="product">
-        <p>macbook pro 2 - $1000</p>
-        <img src=https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mbp14-spaceblack-select-202410?wid=904&hei=840&fmt=jpeg&qlt=90&.v=YnlWZDdpMFo0bUpJZnBpZjhKM2M3VGhTSEZFNjlmT2xUUDNBTjljV1BxWVk4UDMvOWNCVUEyZk1VN2FtQlpZWXZvdUZlR0V0VUdJSjBWaDVNVG95Yk15Y0c3T3Y4UWZwZExHUFdTUC9lN28 alt="Product 1" style="width: 150px; height: 150px;">
-        <br>
-        <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
-    </div>
-    <div class="product">
-        <p>airpods 2- $200</p>
-        <img src=https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-2-hero-select-202409?wid=976&hei=916&fmt=jpeg&qlt=90&.v=WTk1dTl5UTBnZXdKN2tua2pFb1hvQ3hmVXd6RnorM2pzUlRIKzNkUEN0U2VDYXovZDMyN1dXU211bjZoVlVUcWJGcXNRQnFCV0w3WVRjTExvdm1ic1dyYTFZWlpPczBocnFKR3FYSlo5L1FXZEdHNUFPR0hYUU12cjI0VlFzM1A alt="Product 2" style="width: 150px; height: 150px;">
-        <br>
-        <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
-    </div>
-    <div class="product">
-        <p>iphone 16 - $200</p>
-        <img src=https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/article/Apple-iPhone-16-Pro-hero-geo-240909_inline.jpg.medium_2x.jpg alt="Product 3" style="width: 150px; height: 150px;">
-        <br>
-        <button onclick="addToCart('Product 3', 30)">Add to Cart</button>
+  <header>COVID-19 India Dashboard</header>
+  <div class="container">
+    <p class="updated">Last Updated: <span id="lastUpdated">Loading...</span></p>
+
+    <div class="stats">
+      <div class="card">
+        <h2 class="confirmed">Confirmed</h2>
+        <p id="confirmed">Loading...</p>
+      </div>
+      <div class="card">
+        <h2 class="recovered">Recovered</h2>
+        <p id="recovered">Loading...</p>
+      </div>
+      <div class="card">
+        <h2 class="deaths">Deaths</h2>
+        <p id="deaths">Loading...</p>
+      </div>
     </div>
 
-    <div class="cart">
-        <h2>Shopping Cart</h2>
-        <ul id="cartItems"></ul>
-        <p><strong>Total:</strong> $<span id="totalPrice">0</span></p>
-    </div>
+    <h2>State-Wise Data</h2>
+    <input type="text" id="searchBox" placeholder="Search for a state...">
+    <table>
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>Confirmed</th>
+          <th>Recovered</th>
+          <th>Deaths</th>
+        </tr>
+      </thead>
+      <tbody id="stateData">
+        <tr><td colspan="4">Loading...</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-    <h2>Remove Item from Cart</h2>
-    <p>Click the button below to remove "macbook" from the cart.</p>
-    <button onclick="removeFromCart('Product 1')">Remove macbook</button>
-    <p>Click the button below to remove "airpods" from the cart.</p>
-    <button onclick="removeFromCart('Product 2')">Remove airpods</button>
-    <p>Click the button below to remove "iphone 16 " from the cart.</p>
-    <button onclick="removeFromCart('Product 3')">Remove iphone 16</button>
+  <footer>
+    Data Source: <a href="https://api.rootnet.in/covid19-in/stats/latest" target="_blank">API</a> 
+  </footer>
 
-    <script>
-        function removeFromCart(productName) {
-            const itemIndex = cart.findIndex(item => item.name === productName);
-            if (itemIndex !== -1) {
-                totalPrice -= cart[itemIndex].price;
-                cart.splice(itemIndex, 1);
-                updateCart();
+  <script>
+    async function fetchCovidData() {
+      try {
+        let response = await fetch("https://api.rootnet.in/covid19-in/stats/latest");
+        let data = await response.json();
+        
+        // Summary
+        let summary = data.data.summary;
+        document.getElementById("confirmed").innerText = summary.total.toLocaleString();
+        document.getElementById("recovered").innerText = summary.discharged.toLocaleString();
+        document.getElementById("deaths").innerText = summary.deaths.toLocaleString();
+
+        // Last updated
+        document.getElementById("lastUpdated").innerText = new Date(data.lastRefreshed).toLocaleString();
+
+        // State data
+        let stateData = data.data.regional;
+        let tbody = document.getElementById("stateData");
+        tbody.innerHTML = "";
+        stateData.forEach(state => {
+          let row = `<tr>
+                      <td>${state.loc}</td>
+                      <td>${state.totalConfirmed.toLocaleString()}</td>
+                      <td>${state.discharged.toLocaleString()}</td>
+                      <td>${state.deaths.toLocaleString()}</td>
+                    </tr>`;
+          tbody.innerHTML += row;
+        });
+
+        // Search filter
+        document.getElementById("searchBox").addEventListener("keyup", function() {
+          let filter = this.value.toLowerCase();
+          let rows = tbody.getElementsByTagName("tr");
+          for (let i = 0; i < rows.length; i++) {
+            let cell = rows[i].getElementsByTagName("td")[0];
+            if (cell) {
+              let txt = cell.textContent || cell.innerText;
+              rows[i].style.display = txt.toLowerCase().indexOf(filter) > -1 ? "" : "none";
             }
-        }
-    </script>
+          }
+        });
 
-    <script>
-        const cart = [];
-        let totalPrice = 0;
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
 
-        function addToCart(productName, productPrice) {
-            cart.push({ name: productName, price: productPrice });
-            totalPrice += productPrice;
-            updateCart();
-        }
-
-        function updateCart() {
-            const cartItems = document.getElementById('cartItems');
-            const totalPriceElement = document.getElementById('totalPrice');
-
-            cartItems.innerHTML = '';
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.name} - $${item.price}`;
-                cartItems.appendChild(li);
-            });
-
-            totalPriceElement.textContent = totalPrice;
-        }
-    </script>
+    fetchCovidData();
+  </script>
 </body>
 </html>
