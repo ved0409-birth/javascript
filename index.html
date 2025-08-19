@@ -6,82 +6,123 @@
     <title>Add to Cart</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
             background-color: #f9f9f9;
             color: #333;
+            line-height: 1.6;
         }
+
+        h1, h2 {
+            color: #444;
+        }
+
         .product {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            border: 1px solid #ddd;
             padding: 10px;
+            border: 1px solid #ddd;
             border-radius: 5px;
             background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .product img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-right: 20px;
-            border-radius: 5px;
-        }
+
         .product p {
-            margin: 0;
-            font-size: 16px;
-            flex-grow: 1;
+            margin: 0 0 10px;
         }
+
         .product button {
-            padding: 10px 15px;
+            padding: 5px 10px;
             background-color: #28a745;
             color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
             cursor: pointer;
+            font-size: 14px;
         }
+
         .product button:hover {
             background-color: #218838;
+        }
+
+        .cart {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+
+        .cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart ul li {
+            margin-bottom: 5px;
+        }
+
+        .cart p {
+            margin: 10px 0 0;
+            font-weight: bold;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .product {
+            margin-bottom: 20px;
         }
         .cart {
             margin-top: 30px;
             border-top: 1px solid #ccc;
             padding-top: 10px;
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        .cart h2 {
-            margin-top: 0;
-        }
-        #cartItems li {
-            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>Product Images</h1>
+    <h1>Welcome to Our Store</h1>
+    
+    <h1>Products</h1>
     <div class="product">
-        <img src="https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/article/Apple-iPhone-16-Pro-hero-240909_inline.jpg.small_2x.jpg" alt="Product 1">
-        <p>Product 1 - $10</p>
+        <p>macbook pro 2 - $1000</p>
+        <img src=https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mbp14-spaceblack-select-202410?wid=904&hei=840&fmt=jpeg&qlt=90&.v=YnlWZDdpMFo0bUpJZnBpZjhKM2M3VGhTSEZFNjlmT2xUUDNBTjljV1BxWVk4UDMvOWNCVUEyZk1VN2FtQlpZWXZvdUZlR0V0VUdJSjBWaDVNVG95Yk15Y0c3T3Y4UWZwZExHUFdTUC9lN28 alt="Product 1" style="width: 150px; height: 150px;">
+        <br>
         <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
     </div>
     <div class="product">
-        <img src="https://via.placeholder.com/100" alt="Product 2">
-        <p>Product 2 - $20</p>
+        <p>airpods 2- $200</p>
+        <img src=https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-2-hero-select-202409?wid=976&hei=916&fmt=jpeg&qlt=90&.v=WTk1dTl5UTBnZXdKN2tua2pFb1hvQ3hmVXd6RnorM2pzUlRIKzNkUEN0U2VDYXovZDMyN1dXU211bjZoVlVUcWJGcXNRQnFCV0w3WVRjTExvdm1ic1dyYTFZWlpPczBocnFKR3FYSlo5L1FXZEdHNUFPR0hYUU12cjI0VlFzM1A alt="Product 2" style="width: 150px; height: 150px;">
+        <br>
         <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
     </div>
     <div class="product">
-        <img src="https://via.placeholder.com/100" alt="Product 3">
-        <p>Product 3 - $30</p>
+        <p>iphone 16 - $200</p>
+        <img src=https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/article/Apple-iPhone-16-Pro-hero-geo-240909_inline.jpg.medium_2x.jpg alt="Product 3" style="width: 150px; height: 150px;">
+        <br>
         <button onclick="addToCart('Product 3', 30)">Add to Cart</button>
     </div>
-    
+
     <div class="cart">
         <h2>Shopping Cart</h2>
         <ul id="cartItems"></ul>
-        <p>Total Price: $<span id="totalPrice">0</span></p>
+        <p><strong>Total:</strong> $<span id="totalPrice">0</span></p>
     </div>
+
+    <h2>Remove Item from Cart</h2>
+    <p>Click the button below to remove "macbook" from the cart.</p>
+    <button onclick="removeFromCart('Product 1')">Remove macbook</button>
+    <p>Click the button below to remove "airpods" from the cart.</p>
+    <button onclick="removeFromCart('Product 2')">Remove airpods</button>
+    <p>Click the button below to remove "iphone 16 " from the cart.</p>
+    <button onclick="removeFromCart('Product 3')">Remove iphone 16</button>
+
+    <script>
+        function removeFromCart(productName) {
+            const itemIndex = cart.findIndex(item => item.name === productName);
+            if (itemIndex !== -1) {
+                totalPrice -= cart[itemIndex].price;
+                cart.splice(itemIndex, 1);
+                updateCart();
+            }
+        }
+    </script>
 
     <script>
         const cart = [];
@@ -96,12 +137,14 @@
         function updateCart() {
             const cartItems = document.getElementById('cartItems');
             const totalPriceElement = document.getElementById('totalPrice');
+
             cartItems.innerHTML = '';
             cart.forEach(item => {
                 const li = document.createElement('li');
                 li.textContent = `${item.name} - $${item.price}`;
                 cartItems.appendChild(li);
             });
+
             totalPriceElement.textContent = totalPrice;
         }
     </script>
